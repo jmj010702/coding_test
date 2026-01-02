@@ -21,6 +21,7 @@ public class Main {
         int sum = 0;
 
         sum = arr[s];
+        /*
         while (e < arr.length) {
             if (sum == m) {
                 count++;
@@ -32,6 +33,27 @@ public class Main {
             } else if (sum < m) {
                 e++;
                 if (e == arr.length) break;
+                sum += arr[e];
+            }
+        }
+         */
+        while(s<=e &&e<arr.length) {
+            if(sum==m) {
+                count++;
+                e++;
+                if(e==arr.length)break;
+                sum += arr[e];
+            } else if(sum > m) {
+                sum -= arr[s];
+                s++;
+                if(s>e) {
+                   e++;
+                    if(e==arr.length)break;
+                    sum += arr[e];
+                }
+            } else if(sum < m) {
+                e ++;
+                if(e==arr.length)break;
                 sum += arr[e];
             }
         }
